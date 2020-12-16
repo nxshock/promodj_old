@@ -15,7 +15,7 @@ var templates *template.Template
 func init() {
 	var err error
 
-	templateFiles, err := filepath.Glob("/var/lib/promodj/templates/*.html")
+	templateFiles, err := filepath.Glob("/usr/lib/promodj/templates/*.html")
 	if err != nil {
 		log.Fatalln(err)
 	}
