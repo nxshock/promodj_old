@@ -1,0 +1,27 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+	<link rel="stylesheet" href="style.css">
+	<title>Поиск - {{.Query}}</title>
+</head>
+
+<body>
+	<div class="top-panel">
+		<form action="/search">
+			<input class="search-input" placeholder="Поиск" value="{{.Query}}" name="q">
+		</form>
+	</div>
+	<div class="results">
+		{{range .Results}}
+		<div>
+			<div>{{if .Artist}} {{.Artist}} - {{.Title}} {{else}} {{.Title}} {{end}}</div>
+			<audio preload="none" src="/get?url={{.DownloadUrl}}" controls>
+		</div>
+		{{end}}
+	</div>
+</body>
+
+</html>

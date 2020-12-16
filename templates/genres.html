@@ -1,0 +1,22 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+	<link rel="stylesheet" href="style.css">
+	<title>Выберите жанр</title>
+</head>
+
+<body>
+	<div class="top-panel">
+		<form action="/search">
+			<input class="search-input" placeholder="Поиск" name="q">
+		</form>
+	</div>
+	<div id="genres-list">
+		{{range .}}<a href="/?g={{.Code}}">{{.Name}}</a>
+		{{end}}</div>
+</body>
+
+</html>

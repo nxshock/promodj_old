@@ -1,0 +1,35 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+	<link rel="stylesheet" href="style.css">
+	<script defer type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+	<div id="trackInfo">
+		<div id="trackTitle">Super Long Track Title Best Day Ever</div>
+		<div id="trackArtist">Mac Miller</div>
+		<div id="genreList">Pop</div>
+	</div>
+	<div id="playlist">
+		<p class="active">&#9654; playlist not implemented</p>
+	</div>
+	<div id="progress">
+		<div id="currentTime">0:00</div>
+		<div class="slider">
+			<input type="range" min="0" max="0" value="0" class="slider" id="myRange">
+		</div>
+		<div id="totalTime">0:00</div>
+	</div>
+	<div id="player-controls">
+		<button onclick="prevTrack();" disabled><img src="/prev.svg"></button>
+		<button id="playPauseButton" onclick="playPauseTrack();"><img src="/play.svg"></button>
+		<button onclick="nextTrack();"><img src="/next.svg"></button>
+		<button onclick="download();"><img src="/download.svg"></button>
+	</div>
+</body>
+
+</html>

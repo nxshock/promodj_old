@@ -1,0 +1,171 @@
+:root {
+	--bg-color: #eee;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Verdana";
+	font-size: 14px;
+	/*border: 1px solid #fdd;*/
+}
+
+body {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	overflow: hidden;
+}
+
+a {
+	display: block;
+	padding: 1em;
+	border-bottom: 1px solid #000;
+	text-decoration: none;
+	color: #000;
+}
+
+div {
+	display: block;
+	margin: 1em;
+}
+
+button {
+	width: 100%;
+	padding: 0.5em;
+	background-color: var(--bg-color);
+	border: 1px solid #ddd;
+}
+
+button:hover {
+	border: 1px solid #aaa;
+}
+
+button:disabled {
+	opacity: 50%;
+}
+
+button > img {
+	width: 4em;
+	height: 4em;
+}
+
+div#genres-list {
+	overflow-y: scroll;
+}
+
+div#trackTitle {
+	font-weight: bold;
+	font-size: 125%;
+}
+
+div#trackArtist {
+	opacity: 50%;
+}
+
+div#genreList {
+	opacity: 25%;
+}
+
+div.top-panel {
+	display: block;
+	top: 0;
+}
+
+div.results {
+	margin: 0;
+}
+
+input {
+	width: 100%;
+	padding: 0.25em;
+}
+
+div#trackInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	/*align-items: center; использовать, чтобы текст был по центру*/
+
+	border: 1px solid #ddd;
+	background-color: var(--bg-color);
+}
+
+div#progress {
+	align-self: stretch;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	margin: 0;
+}
+
+div#trackInfo > div {
+	margin: 0.0em;
+}
+
+div#player-controls {
+	display: flex;
+	flex-direction: row;
+	margin: 0;
+}
+
+div#player-controls > button {
+	margin-left: 0.5em;
+}
+
+div#player-controls > button:first-child {
+	margin-left: 0;
+}
+
+div#player-controls > button:last-child {
+	margin-left: 2em;
+}
+
+div#playlist {
+	align-self: stretch;
+	overflow-y: scroll;
+	border: 1px solid #ddd;
+	background-color: var(--bg-color);
+}
+
+div#playlist > p {
+	padding: 0.5em;
+	opacity: 50%;
+}
+
+div#playlist > p.active {
+	background-color: #ddf;
+	opacity: 100%;
+}
+
+div.slider {
+	flex-grow: 1;
+	border: 1px solid #ddd;
+}
+
+div.slider > input {
+	appearance: none;
+	height: 3em; /* Specified height */
+	background: #eee;
+	outline: none; /* Remove outline */
+}
+
+div.slider > input::-webkit-slider-thumb {
+	appearance: none;
+	width: 1em;
+	height: 3em;
+	background: #55f;
+}
+
+div.slider > input::-moz-range-thumb {
+	appearance: none;
+	width: 1em;
+	height: 3em;
+	background: #55f;
+}

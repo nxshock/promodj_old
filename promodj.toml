@@ -1,0 +1,7 @@
+HostName = "127.0.0.1"
+ListenAddr = ":80"
+BufferSize = 128
+Bitrate = 32
+Codec = "libopus"
+Format = "opus"
+ContentType = "audio/ogg"
