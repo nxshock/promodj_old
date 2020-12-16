@@ -32,7 +32,7 @@ func init() {
 	http.HandleFunc("/genres", handleGenres)
 	http.HandleFunc("/getRandomTrackInfoByGenre", handleGetRandomTrackInfoByGenre)
 	http.HandleFunc("/getRandomTrackDataByGenre", handleGetRandomTrackDataByGenre)
-	http.Handle("/", http.FileServer(http.Dir("./site")))
+	http.Handle("/", http.FileServer(http.Dir("/usr/lib/promodj/site")))
 }
 
 func handleGet(w http.ResponseWriter, r *http.Request) {
