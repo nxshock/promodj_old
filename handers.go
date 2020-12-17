@@ -15,7 +15,7 @@ var templates *template.Template
 func init() {
 	var err error
 
-	templateFiles, err := filepath.Glob("/usr/lib/promodj/templates/*.html")
+	templateFiles, err := filepath.Glob(filepath.Join(templateFilesPath, "*.html"))
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -32,7 +32,7 @@ func init() {
 	http.HandleFunc("/genres", handleGenres)
 	http.HandleFunc("/getRandomTrackInfoByGenre", handleGetRandomTrackInfoByGenre)
 	http.HandleFunc("/getRandomTrackDataByGenre", handleGetRandomTrackDataByGenre)
-	http.Handle("/", http.FileServer(http.Dir("/usr/lib/promodj/site")))
+	http.Handle("/", http.FileServer(http.Dir(siteFilesPath)))
 }
 
 func handleGet(w http.ResponseWriter, r *http.Request) {
