@@ -24,7 +24,7 @@ func init() {
 }
 
 func main() {
-	err := http.ListenAndServe(":80", nil)
+	err := http.ListenAndServe(config.ListenAddr, nil)
 	if err != nil {
 		log.Fatalln(err)
 	}
