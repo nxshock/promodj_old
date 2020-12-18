@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"os"
 	"time"
+
+	"github.com/nxshock/promodj/api"
 )
 
 func init() {
@@ -20,6 +22,11 @@ func init() {
 		}
 	} else {
 		initConfig("")
+	}
+
+	err := api.UpdateGenres()
+	if err != nil {
+		log.Fatalln(err)
 	}
 }
 

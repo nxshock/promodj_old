@@ -3,7 +3,6 @@ package api
 import (
 	"bytes"
 	"fmt"
-	"os"
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
@@ -18,14 +17,15 @@ type Genre struct {
 // Genres holds cached list of available genres
 var Genres []Genre
 
-func init() {
+func UpdateGenres() error {
 	var err error
 
 	Genres, err = updateGenreList()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "init genres list error: %v\n", err)
-		os.Exit(1)
+		return fmt.Errorf("get genres list failed: %w", err)
 	}
+
+	return nil
 }
 
 func updateGenreList() ([]Genre, error) {
