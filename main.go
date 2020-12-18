@@ -15,13 +15,14 @@ func init() {
 
 	rand.Seed(time.Now().Unix())
 
-	if len(os.Args) > 1 {
-		err := initConfig(os.Args[1])
-		if err != nil {
-			log.Fatalln(err)
+	if len(os.Args) == 2 {
+		if err := initConfig(os.Args[1]); err != nil {
+			log.Fatalln("config error:", err)
 		}
 	} else {
-		initConfig(configFilePath)
+		if err := initConfig(configFilePath); err != nil {
+			log.Fatalln("config error:", err)
+		}
 	}
 
 	Log(LogLevelDebug, "Updating genre list...")

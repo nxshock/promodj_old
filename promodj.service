@@ -20,7 +20,7 @@ ProtectKernelModules=true
 ProtectKernelTunables=true
 ProtectSystem=strict
 ProtectHostname=true
-ExecStart=/usr/bin/promodj /etc/promodj.toml
+ExecStart=/usr/bin/promodj
 
 [Install]
 WantedBy=multi-user.target
