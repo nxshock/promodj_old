@@ -21,13 +21,16 @@ func init() {
 			log.Fatalln(err)
 		}
 	} else {
-		initConfig("")
+		initConfig(configFilePath)
 	}
 
+	Log(LogLevelDebug, "Updating genre list...")
 	err := api.UpdateGenres()
 	if err != nil {
 		log.Fatalln(err)
 	}
+
+	Log(LogLevelDebug, "Initialization completed.")
 }
 
 func main() {

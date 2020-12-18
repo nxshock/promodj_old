@@ -18,18 +18,14 @@ type Config struct {
 	Codec       string
 	Format      string
 	ContentType string
+
+	LogLevel int
 }
 
 var config *Config
 
 func initConfig(filePath string) error {
-	var err error
-
-	if filePath != "" {
-		_, err = toml.DecodeFile(filePath, &config)
-	} else {
-		config = new(Config)
-	}
+	_, err := toml.DecodeFile(filePath, &config)
 	if err != nil {
 		return err
 	}

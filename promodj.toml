@@ -5,3 +5,4 @@ Bitrate = 32
 Codec = "libopus"
 Format = "opus"
 ContentType = "audio/ogg"
+LogLevel = 1

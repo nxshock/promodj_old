@@ -53,21 +53,27 @@ func encode(url string, w io.Writer) error {
 		"pipe:1")
 	out, err := cmd.StdoutPipe()
 	if err != nil {
+		Log(LogLevelError, err)
 		return err
 	}
 
 	err = cmd.Start()
 	if err != nil {
+		Log(LogLevelError, err)
 		return err
 	}
 
 	go func() {
-		cmd.Wait()
+		err := cmd.Wait()
+		if err != nil {
+			Log(LogLevelError, err)
+		}
 	}()
 
 	buf := buffer.New(int64(config.BufferSize) * 1024 * 1024)
 	_, err = nio.Copy(w, out, buf)
 	if err != nil {
+		Log(LogLevelDebug, err)
 		cmd.Process.Kill()
 	}
 
