@@ -1,8 +1,8 @@
-HostName = "127.0.0.1"
-ListenAddr = ":80"
-BufferSize = 128
-Bitrate = 32
-Codec = "libopus"
-Format = "opus"
-ContentType = "audio/ogg"
-LogLevel = 1
+HostName = "127.0.0.1"    # hostname for playlist item addresses
+ListenAddr = ":80"        # addr:port or :port
+BufferSize = 128          # encoded file buffer in MiB
+Bitrate = 32              # encoded file bitrate in kbit/s
+Codec = "libopus"         # ffmpeg codec
+Format = "opus"           # ffmpeg format
+ContentType = "audio/ogg" # Content-Type header for served files
+LogLevel = 1              # 0 - none, 1 - errors, 2 - warnings, 3 - debug
