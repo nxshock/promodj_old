@@ -1,4 +1,3 @@
-HostName = "127.0.0.1"    # hostname for playlist item addresses
 ListenAddr = ":80"        # addr:port or :port
 BufferSize = 128          # encoded file buffer in MiB
 Bitrate = 32              # encoded file bitrate in kbit/s

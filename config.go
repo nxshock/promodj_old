@@ -6,8 +6,6 @@ import (
 
 // Config represents default configuration
 type Config struct {
-	HostName string
-
 	ListenAddr string
 
 	// Mb

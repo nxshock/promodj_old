@@ -48,7 +48,7 @@ func handlePlaylist(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", config.ContentType)
 	w.Header().Set("Accept-Ranges", "none")
 
-	w.Write(api.GetM3uPlaylist("http://" + config.HostName + "/getRandomTrackDataByGenre?g="))
+	w.Write(api.GetM3uPlaylist("http://" + r.Host + "/getRandomTrackDataByGenre?g="))
 }
 
 func handleGetRandomTrackDataByGenre(w http.ResponseWriter, r *http.Request) {
