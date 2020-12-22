@@ -1,6 +1,7 @@
 [Unit]
 Description=promodj service
 After=network.target
+Requires=network.target
 
 [Service]
 Type=simple
