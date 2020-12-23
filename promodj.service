@@ -21,6 +21,7 @@ ProtectKernelLogs=true
 ProtectKernelModules=true
 ProtectKernelTunables=true
 ProtectSystem=strict
+RestrictRealtime=true
 ProtectHostname=true
 ExecStart=/usr/bin/promodj
 
