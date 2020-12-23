@@ -12,7 +12,6 @@ AmbientCapabilities=CAP_NET_BIND_SERVICE
 DevicePolicy=closed
 PrivateDevices=true
 PrivateTmp=true
-PrivateUsers=true
 NoNewPrivileges=true
 ProtectClock=true
 ProtectControlGroups=true
