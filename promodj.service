@@ -20,6 +20,7 @@ ProtectHome=true
 ProtectKernelLogs=true
 ProtectKernelModules=true
 ProtectKernelTunables=true
+ProtectProc=noaccess
 ProtectSystem=strict
 RestrictRealtime=true
 LockPersonality=true
