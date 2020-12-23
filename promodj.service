@@ -23,7 +23,6 @@ ProtectKernelTunables=true
 ProtectProc=noaccess
 ProtectSystem=strict
 RestrictRealtime=true
-LockPersonality=true
 ProtectHostname=true
 ExecStart=/usr/bin/promodj
 
