@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"html/template"
 	"log"
+	"net"
 	"net/http"
 	"path/filepath"
 
@@ -48,7 +49,12 @@ func handlePlaylist(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", config.ContentType)
 	w.Header().Set("Accept-Ranges", "none")
 
-	w.Write(api.GetM3uPlaylist("http://" + r.Host + "/getRandomTrackDataByGenre?g="))
+	host := r.Host
+	if _, port, err := net.SplitHostPort(config.ListenAddr); err != nil && port != "0" && port != "80" {
+		host = host + ":" + port
+	}
+
+	w.Write(api.GetM3uPlaylist("http://" + host + "/getRandomTrackDataByGenre?g="))
 }
 
 func handleGetRandomTrackDataByGenre(w http.ResponseWriter, r *http.Request) {
