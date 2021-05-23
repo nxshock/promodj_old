@@ -1,23 +1,27 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
-	<link rel="stylesheet" href="style.css">
-	<title>Выберите жанр</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>???</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<link rel="stylesheet" href="style2.css">
 </head>
 
 <body>
 	<header><img src="/favicon.svg"> {{.Domain}}</header>
-	<div class="top-panel">
-		<form action="/search">
-			<input class="search-input" placeholder="Поиск" name="q">
+	<main>
+		<form action="/search" class="top-panel">
+			<input class="search-input" placeholder="Поиск трека" name="q">
 		</form>
-	</div>
-	<div id="genres-list">
-		{{range .Genres}}<a href="/?g={{.Code}}">{{.Name}}</a>
-		{{end}}</div>
+		<h1>Список жанров</h1>
+		<ul id="genres-list">
+			{{range .Genres}}<li><a href="/?g={{.Code}}">{{.Name}}</a></li>
+{{end}}			
+		</ul>
+	</main>
+	<footer>&copy; {{.Domain}}</footer>
 </body>
 
 </html>
