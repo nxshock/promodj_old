@@ -9,13 +9,14 @@
 </head>
 
 <body>
+	<header><img src="/favicon.svg"> {{.Domain}}</header>
 	<div class="top-panel">
 		<form action="/search">
 			<input class="search-input" placeholder="Поиск" name="q">
 		</form>
 	</div>
 	<div id="genres-list">
-		{{range .}}<a href="/?g={{.Code}}">{{.Name}}</a>
+		{{range .Genres}}<a href="/?g={{.Code}}">{{.Name}}</a>
 		{{end}}</div>
 </body>
 

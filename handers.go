@@ -99,7 +99,14 @@ func handleGetRandomTrackInfoByGenre(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleGenres(w http.ResponseWriter, r *http.Request) {
-	err := templates.Lookup("genres.html").Execute(w, api.Genres)
+	data := struct {
+		Domain string
+		Genres []api.Genre
+	}{
+		Domain: r.Host,
+		Genres: api.Genres}
+
+	err := templates.Lookup("genres.html").Execute(w, data)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
