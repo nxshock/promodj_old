@@ -20,6 +20,12 @@ body {
 	overflow: hidden;
 }
 
+header {
+	background-color: #eee;
+	border-bottom: 1px solid #ddd;
+	padding: .5em
+}
+
 a {
 	display: block;
 	padding: 1em;
